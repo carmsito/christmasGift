@@ -149,6 +149,13 @@
         <span class="material-symbols-outlined text-lg">celebration</span>
         <span>Joyeux Noël doudou !</span>
     </div>
+    <div id="volume-hint" class="fixed inset-0 flex items-center justify-center z-50 bg-black/60 opacity-0 transition-opacity duration-500 pointer-events-none">
+        <div class="bg-white dark:bg-gray-900 rounded-2xl px-8 py-6 shadow-xl flex flex-col items-center">
+            <span class="material-symbols-outlined text-4xl text-primary mb-2">volume_up</span>
+            <span class="text-xl font-bold text-primary">Monte le volume au max !</span>
+            <span class="text-sm text-gray-500 mt-2">Pour profiter pleinement de la surprise 🎶</span>
+        </div>
+    </div>
     <h1 id="fade-title" class="text-4xl md:text-6xl font-black leading-tight tracking-tight mb-4 opacity-0 translate-y-8 transition-all duration-1500">
         Une surprise t'attend...
     </h1>
@@ -399,7 +406,18 @@ if (playBtn) {
         }
         isPlaying = !isPlaying;
         if (!animationsStarted) {
+            const volumeHint = document.getElementById('volume-hint');
+            if (volumeHint) {
+                volumeHint.classList.add('opacity-100');
+                volumeHint.classList.remove('opacity-0');
+                volumeHint.classList.remove('pointer-events-none');
+            }
             setTimeout(() => {
+                if (volumeHint) {
+                    volumeHint.classList.remove('opacity-100');
+                    volumeHint.classList.add('opacity-0');
+                    volumeHint.classList.add('pointer-events-none');
+                }
                 startGiftAnimations();
                 animationsStarted = true;
             }, 4000);
