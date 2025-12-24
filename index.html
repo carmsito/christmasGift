@@ -145,50 +145,50 @@
 <main class="relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-80px)] px-4 py-8">
 <!-- Hero Content / Greeting -->
 <div class="text-center mb-12 animate-fade-in-up">
-<div class="inline-flex items-center justify-center gap-2 px-4 py-2 bg-red-50 dark:bg-red-900/20 rounded-full text-primary font-bold text-sm mb-4">
-<span class="material-symbols-outlined text-lg">celebration</span>
-<span>Joyeux Noël doudou !</span>
-</div>
-<h1 class="text-4xl md:text-6xl font-black leading-tight tracking-tight mb-4">
-                Une surprise t'attend...
-            </h1>
-<p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Prépare ta valise cabine, quelque chose de très spécial a été préparé pour toi cette année.
-            </p>
-<div class="flex flex-col items-center gap-3">
-<div class="text-sm font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400" style="margin-top:1rem">Décollage dans</div>
-<div class="flex gap-4 md:gap-6 text-center">
-<div class="flex flex-col items-center">
-    <div class="w-16 h-16 md:w-20 md:h-20 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 flex items-center justify-center">
-        <span id="days" class="text-2xl md:text-3xl font-black text-primary">0</span>
+    <div id="fade-noel" class="inline-flex items-center justify-center gap-2 px-4 py-2 bg-red-50 dark:bg-red-900/20 rounded-full text-primary font-bold text-sm mb-4 opacity-0 translate-y-8 transition-all duration-2000">
+        <span class="material-symbols-outlined text-lg">celebration</span>
+        <span>Joyeux Noël doudou !</span>
     </div>
-    <span class="text-xs font-bold text-gray-400 mt-2 uppercase">Jours</span>
-</div>
-<div class="flex flex-col items-center">
-    <div class="w-16 h-16 md:w-20 md:h-20 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 flex items-center justify-center">
-        <span id="hours" class="text-2xl md:text-3xl font-black text-primary">0</span>
+    <h1 id="fade-title" class="text-4xl md:text-6xl font-black leading-tight tracking-tight mb-4 opacity-0 translate-y-8 transition-all duration-1500">
+        Une surprise t'attend...
+    </h1>
+    <p id="fade-desc" class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto opacity-0 translate-y-8 transition-all duration-1500">
+        Prépare ta valise cabine, quelque chose de très spécial a été préparé pour toi cette année.
+    </p>
+    <div id="fade-decollage" class="flex flex-col items-center gap-3 opacity-0 translate-y-8 transition-all duration-1500">
+        <div class="text-sm font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400" style="margin-top:1rem">Décollage dans</div>
+        <div class="flex gap-4 md:gap-6 text-center">
+            <div class="flex flex-col items-center">
+                <div class="w-16 h-16 md:w-20 md:h-20 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 flex items-center justify-center">
+                    <span id="days" class="text-2xl md:text-3xl font-black text-primary">0</span>
+                </div>
+                <span class="text-xs font-bold text-gray-400 mt-2 uppercase">Jours</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="w-16 h-16 md:w-20 md:h-20 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 flex items-center justify-center">
+                    <span id="hours" class="text-2xl md:text-3xl font-black text-primary">0</span>
+                </div>
+                <span class="text-xs font-bold text-gray-400 mt-2 uppercase">Heures</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="w-16 h-16 md:w-20 md:h-20 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 flex items-center justify-center">
+                    <span id="minutes" class="text-2xl md:text-3xl font-black text-primary">0</span>
+                </div>
+                <span class="text-xs font-bold text-gray-400 mt-2 uppercase">Minutes</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="w-16 h-16 md:w-20 md:h-20 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 flex items-center justify-center">
+                    <span id="seconds" class="text-2xl md:text-3xl font-black text-primary">0</span>
+                </div>
+                <span class="text-xs font-bold text-gray-400 mt-2 uppercase">Secondes</span>
+            </div>
+        </div>
     </div>
-    <span class="text-xs font-bold text-gray-400 mt-2 uppercase">Heures</span>
-</div>
-<div class="flex flex-col items-center">
-    <div class="w-16 h-16 md:w-20 md:h-20 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 flex items-center justify-center">
-        <span id="minutes" class="text-2xl md:text-3xl font-black text-primary">0</span>
-    </div>
-    <span class="text-xs font-bold text-gray-400 mt-2 uppercase">Minutes</span>
-</div>
-<div class="flex flex-col items-center">
-    <div class="w-16 h-16 md:w-20 md:h-20 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 flex items-center justify-center">
-        <span id="seconds" class="text-2xl md:text-3xl font-black text-primary">0</span>
-    </div>
-    <span class="text-xs font-bold text-gray-400 mt-2 uppercase">Secondes</span>
-</div>
-</div>
-</div>
 </div>
 <!-- Ticket Container -->
 <div class="w-full max-w-[900px] relative group perspective-1000">
 <!-- The Ticket -->
-<div class="bg-white dark:bg-gray-800 rounded-lg shadow-2xl overflow-hidden relative border border-gray-100 dark:border-gray-700">
+<div id="fade-ticket" class="bg-white dark:bg-gray-800 rounded-lg shadow-2xl overflow-hidden relative border border-gray-100 dark:border-gray-700 opacity-0 transition-opacity duration-1000">
 <!-- Ticket Header -->
 <div class="bg-primary p-6 text-white flex justify-between items-center">
 <div class="flex items-center gap-3">
@@ -284,12 +284,13 @@
 <!-- Action Buttons -->
 <div class="flex flex-col sm:flex-row items-center gap-4 mt-12">
 <a
-  href="./assets/billet-voyage-surprise.pdf"
-  download="billet-voyage-surprise.pdf"
-  class="group flex min-w-[200px] cursor-pointer items-center justify-center gap-3 overflow-hidden rounded-full h-14 px-8 bg-primary hover:bg-red-700 transition-all text-white text-base font-bold shadow-xl shadow-red-500/30 hover:shadow-red-500/50 transform hover:-translate-y-0.5"
+    id="fade-download"
+    href="./assets/billet-voyage-surprise.pdf"
+    download="billet-voyage-surprise.pdf"
+    class="group flex min-w-[200px] cursor-pointer items-center justify-center gap-3 overflow-hidden rounded-full h-14 px-8 bg-primary hover:bg-red-700 transition-all text-white text-base font-bold shadow-xl shadow-red-500/30 hover:shadow-red-500/50 transform hover:-translate-y-0.5 opacity-0 translate-y-8 transition-all duration-1500"
 >
-  <span class="material-symbols-outlined">download</span>
-  <span>Télécharger le billet</span>
+    <span class="material-symbols-outlined">download</span>
+    <span>Télécharger le billet</span>
 </a>
 <!-- <button class="group flex min-w-[200px] cursor-pointer items-center justify-center gap-3 overflow-hidden rounded-full h-14 px-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all text-[#181112] dark:text-white text-base font-bold shadow-sm hover:shadow-md">
 <span class="material-symbols-outlined">map</span>
@@ -320,24 +321,73 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
+// Séquence de fade-in pour le texte et le billet après clic sur Play
+function startGiftAnimations() {
+    const fadeTitle = document.getElementById('fade-title');
+    const fadeDesc = document.getElementById('fade-desc');
+    const fadeDecollage = document.getElementById('fade-decollage');
+    const fadeNoel = document.getElementById('fade-noel');
+    const fadeTicket = document.getElementById('fade-ticket');
+    const fadeDownload = document.getElementById('fade-download');
+    if (fadeNoel) {
+        setTimeout(() => {
+            fadeNoel.classList.add('opacity-100');
+            fadeNoel.classList.remove('opacity-0');
+            fadeNoel.classList.add('translate-y-0');
+            fadeNoel.classList.remove('translate-y-8');
+        }, 800);
+    }
+    if (fadeTitle) {
+        setTimeout(() => {
+            fadeTitle.classList.add('opacity-100');
+            fadeTitle.classList.remove('opacity-0');
+            fadeTitle.classList.add('translate-y-0');
+            fadeTitle.classList.remove('translate-y-8');
+        }, 2200);
+    }
+    if (fadeDesc) {
+        setTimeout(() => {
+            fadeDesc.classList.add('opacity-100');
+            fadeDesc.classList.remove('opacity-0');
+            fadeDesc.classList.add('translate-y-0');
+            fadeDesc.classList.remove('translate-y-8');
+        }, 3700);
+    }
+    if (fadeDecollage) {
+        setTimeout(() => {
+            fadeDecollage.classList.add('opacity-100');
+            fadeDecollage.classList.remove('opacity-0');
+            fadeDecollage.classList.add('translate-y-0');
+            fadeDecollage.classList.remove('translate-y-8');
+        }, 5200);
+    }
+    if (fadeTicket) {
+        setTimeout(() => {
+            fadeTicket.classList.add('opacity-100');
+            fadeTicket.classList.remove('opacity-0');
+            fadeTicket.classList.add('translate-y-0');
+            fadeTicket.classList.remove('translate-y-8');
+        }, 6700);
+    }
+    if (fadeDownload) {
+        setTimeout(() => {
+            fadeDownload.classList.add('opacity-100');
+            fadeDownload.classList.remove('opacity-0');
+            fadeDownload.classList.add('translate-y-0');
+            fadeDownload.classList.remove('translate-y-8');
+        }, 8200);
+    }
+}
+
 // Musique de fond
 const audio = new Audio('./assets/music.mp3');
 audio.loop = true;
 let isPlaying = false;
 const playBtn = document.getElementById('play-music-btn');
 
-// Démarrer la musique dès l'arrivée sur le site
-window.addEventListener('DOMContentLoaded', function() {
-    audio.play().then(() => {
-        isPlaying = true;
-        if (playBtn) {
-            playBtn.innerHTML = '<span class="material-symbols-outlined text-2xl">pause</span>';
-        }
-    }).catch(() => {
-        // Certains navigateurs bloquent l'autoplay, l'utilisateur devra cliquer
-    });
-});
 
+
+let animationsStarted = false;
 if (playBtn) {
     playBtn.addEventListener('click', function() {
         if (!isPlaying) {
@@ -348,6 +398,12 @@ if (playBtn) {
             playBtn.innerHTML = '<span class="material-symbols-outlined text-2xl">play_arrow</span>';
         }
         isPlaying = !isPlaying;
+        if (!animationsStarted) {
+            setTimeout(() => {
+                startGiftAnimations();
+                animationsStarted = true;
+            }, 4000);
+        }
     });
 }
 </script>
