@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Page d'accueil du cadeau - Voyage Surprise</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec1325",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221012",
+                    },
+                    fontFamily: {
+                        "display": ["Be Vietnam Pro", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom styles for ticket notches */
+        .ticket-notch {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f8f6f6; /* matches background-light */
+            z-index: 10;
+        }
+        .dark .ticket-notch {
+            background-color: #221012; /* matches background-dark */
+        }
+        .notch-left {
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .notch-right {
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .dashed-line {
+            border-bottom: 2px dashed #e5e7eb;
+            height: 1px;
+            width: 100%;
+        }
+        /* Reveal Animation Simulation Classes (for static visual representation) */
+        .gift-wrapper {
+            transition: all 0.8s ease-in-out;
+        }
+        /* Snow effect simulation */
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            color: #d1d5db;
+            font-size: 1em;
+            font-family: Arial, sans-serif;
+            text-shadow: 0 0 5px #000;
+            z-index: 0;
+            user-select: none;
+            cursor: default;
+            animation-name: snowflakes-fall, snowflakes-shake;
+            animation-duration: 10s, 3s;
+            animation-timing-function: linear, ease-in-out;
+            animation-iteration-count: infinite, infinite;
+            animation-play-state: running, running;
+        }
+        @keyframes snowflakes-fall {
+            0% { top: -10%; }
+            100% { top: 100%; }
+        }
+        @keyframes snowflakes-shake {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(80px); }
+        }
+        .snowflake:nth-of-type(1) { left: 1%; animation-delay: 0s, 0s; }
+        .snowflake:nth-of-type(2) { left: 10%; animation-delay: 1s, 1s; }
+        .snowflake:nth-of-type(3) { left: 20%; animation-delay: 6s, .5s; }
+        .snowflake:nth-of-type(4) { left: 30%; animation-delay: 4s, 2s; }
+        .snowflake:nth-of-type(5) { left: 40%; animation-delay: 2s, 2s; }
+        .snowflake:nth-of-type(6) { left: 50%; animation-delay: 8s, 3s; }
+        .snowflake:nth-of-type(7) { left: 60%; animation-delay: 6s, 2s; }
+        .snowflake:nth-of-type(8) { left: 70%; animation-delay: 2.5s, 1s; }
+        .snowflake:nth-of-type(9) { left: 80%; animation-delay: 1s, 0s; }
+        .snowflake:nth-of-type(10) { left: 90%; animation-delay: 3s, 1.5s; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#181112] dark:text-white transition-colors duration-300">
+<!-- Snowflakes Container -->
+<div aria-hidden="true" class="fixed inset-0 pointer-events-none overflow-hidden h-full w-full">
+<div class="snowflake">❄</div>
+<div class="snowflake">❅</div>
+<div class="snowflake">❆</div>
+<div class="snowflake">❄</div>
+<div class="snowflake">❅</div>
+<div class="snowflake">❆</div>
+<div class="snowflake">❄</div>
+<div class="snowflake">❅</div>
+<div class="snowflake">❆</div>
+<div class="snowflake">❄</div>
+</div>
+<!-- Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap px-4 md:px-10 py-4 relative z-20">
+<div class="flex items-center gap-4">
+<div class="size-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">flight_takeoff</span>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-tight">Voyage Surprise</h2>
+</div>
+<div class="hidden md:flex items-center justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Accueil</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Mon Compte</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Aide</a>
+</div>
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary hover:bg-red-700 transition-colors text-white text-sm font-bold shadow-lg shadow-red-200">
+<span class="truncate">Connexion</span>
+</button>
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-2xl cursor-pointer">menu</span>
+</div>
+</header>
+<main class="relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-80px)] px-4 py-8">
+<!-- Hero Content / Greeting -->
+<div class="text-center mb-12 animate-fade-in-up">
+<div class="inline-flex items-center justify-center gap-2 px-4 py-2 bg-red-50 dark:bg-red-900/20 rounded-full text-primary font-bold text-sm mb-4">
+<span class="material-symbols-outlined text-lg">celebration</span>
+<span>Joyeux Noël doudou !</span>
+</div>
+<h1 class="text-4xl md:text-6xl font-black leading-tight tracking-tight mb-4">
+                Une surprise t'attend...
+            </h1>
+<p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                Prépare ta valise cabine, quelque chose de très spécial a été préparé pour toi cette année.
+            </p>
+<div class="flex flex-col items-center gap-3">
+<div class="text-sm font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400" style="margin-top:1rem">Décollage dans</div>
+<div class="flex gap-4 md:gap-6 text-center">
+<div class="flex flex-col items-center">
+    <div class="w-16 h-16 md:w-20 md:h-20 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 flex items-center justify-center">
+        <span id="days" class="text-2xl md:text-3xl font-black text-primary">0</span>
+    </div>
+    <span class="text-xs font-bold text-gray-400 mt-2 uppercase">Jours</span>
+</div>
+<div class="flex flex-col items-center">
+    <div class="w-16 h-16 md:w-20 md:h-20 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 flex items-center justify-center">
+        <span id="hours" class="text-2xl md:text-3xl font-black text-primary">0</span>
+    </div>
+    <span class="text-xs font-bold text-gray-400 mt-2 uppercase">Heures</span>
+</div>
+<div class="flex flex-col items-center">
+    <div class="w-16 h-16 md:w-20 md:h-20 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 flex items-center justify-center">
+        <span id="minutes" class="text-2xl md:text-3xl font-black text-primary">0</span>
+    </div>
+    <span class="text-xs font-bold text-gray-400 mt-2 uppercase">Minutes</span>
+</div>
+<div class="flex flex-col items-center">
+    <div class="w-16 h-16 md:w-20 md:h-20 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 flex items-center justify-center">
+        <span id="seconds" class="text-2xl md:text-3xl font-black text-primary">0</span>
+    </div>
+    <span class="text-xs font-bold text-gray-400 mt-2 uppercase">Secondes</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Ticket Container -->
+<div class="w-full max-w-[900px] relative group perspective-1000">
+<!-- The Ticket -->
+<div class="bg-white dark:bg-gray-800 rounded-lg shadow-2xl overflow-hidden relative border border-gray-100 dark:border-gray-700">
+<!-- Ticket Header -->
+<div class="bg-primary p-6 text-white flex justify-between items-center">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-3xl">connecting_airports</span>
+<span class="font-bold tracking-widest text-sm uppercase opacity-90">Boarding Pass</span>
+</div>
+<div class="font-black text-xl tracking-widest opacity-90">ECO CLASS</div>
+</div>
+<div class="flex flex-col md:flex-row">
+<!-- Main Ticket Body -->
+<div class="flex-1 p-8 relative">
+<!-- Left Notch -->
+<!-- <div class="ticket-notch notch-right hidden md:block"></div> -->
+<div class="flex flex-col md:flex-row justify-between gap-8">
+<!-- Flight Route -->
+<div class="flex flex-col gap-6 flex-1">
+<div class="flex items-center justify-between">
+<div class="text-center">
+<div class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-1">PAR</div>
+<div class="text-xs font-bold text-gray-400 uppercase tracking-widest">Paris CDG</div>
+</div>
+<div class="flex-1 px-6 flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-gray-300 text-3xl rotate-90 md:rotate-0">flight</span>
+<div class="w-full h-px bg-gray-200 dashed-line"></div>
+<div class="text-xs font-bold text-primary">8h 30m</div>
+</div>
+<div class="text-center">
+<div class="text-4xl md:text-5xl font-black text-primary mb-1">YYZ</div>
+<div class="text-xs font-bold text-gray-400 uppercase tracking-widest">Toronto Pearson Intl </div>
+</div>
+</div>
+<!-- Passenger Details Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 gap-6 mt-4">
+<div>
+<div class="text-xs font-bold text-gray-400 uppercase mb-1">Passager</div>
+<div class="font-bold text-gray-800 dark:text-gray-100">Lawshana ELOISE</div>
+</div>
+<div>
+<div class="text-xs font-bold text-gray-400 uppercase mb-1">Date</div>
+<div class="font-bold text-gray-800 dark:text-gray-100">16 Mars 2026</div>
+</div>
+<div>
+<div class="text-xs font-bold text-gray-400 uppercase mb-1">Heure</div>
+<div class="font-bold text-gray-800 dark:text-gray-100">11:05 AM</div>
+</div>
+<div>
+<div class="text-xs font-bold text-gray-400 uppercase mb-1">Vol</div>
+<div class="font-bold text-gray-800 dark:text-gray-100">AC 873</div>
+</div>
+<div>
+<div class="text-xs font-bold text-gray-400 uppercase mb-1">Porte</div>
+<div class="font-bold text-gray-800 dark:text-gray-100">Pas encore</div>
+</div>
+<div>
+<div class="text-xs font-bold text-gray-400 uppercase mb-1">Siège</div>
+<div class="font-bold text-gray-800 dark:text-gray-100">Trop pauvre</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Perforated Line Visual -->
+<div class="relative w-full md:w-auto flex md:flex-col items-center justify-center py-4 md:py-0 px-4">
+<div class="h-px md:h-full w-full md:w-px border-t-2 md:border-l-2 md:border-t-0 border-dashed border-gray-300 relative">
+<div class="absolute left-0 md:left-1/2 top-1/2 md:top-0 -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-background-light dark:bg-background-dark rounded-full z-20"></div>
+<div class="absolute right-0 md:left-1/2 top-1/2 md:bottom-0 translate-x-1/2 md:-translate-x-1/2 -translate-y-1/2 md:translate-y-1/2 w-6 h-6 bg-background-light dark:bg-background-dark rounded-full z-20"></div>
+</div>
+</div>
+<!-- Right Stub / Image Side -->
+<div class="w-full md:w-80 bg-gray-50 dark:bg-gray-900/50 p-6 flex flex-col items-center justify-center gap-6">
+<!-- Destination Image Circle -->
+<div class="size-40 rounded-full border-4 border-white shadow-lg overflow-hidden relative">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="New York City skyline during winter" style="background-image: url('https://imgs.search.brave.com/eqrcRwscxhgWIbTVJGMNvoSpnJkk2eh2IsVCPMiY23o/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNDY1/NDY2MTA4L3Bob3Rv/L2NuLXRvd2VyLXRv/cm9udG8tY2l0eXNj/YXBlLW9uLWxha2Ut/b250YXJpby5qcGc_/cz02MTJ4NjEyJnc9/MCZrPTIwJmM9M2RW/RDJtZE1lbkY5Umd3/M0kzNTNJZlpfa2pJ/RGJVZG1CMXVadW52/NmgwST0');"></div>
+</div>
+<div class="text-center w-full">
+<div class="text-sm text-gray-500 mb-4">Scanne pour l'itinéraire</div>
+<!-- Fake QR Code -->
+<div class="bg-white p-2 rounded-lg inline-block shadow-sm">
+<span class="material-symbols-outlined text-6xl text-gray-800">qr_code_2</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Festive Footer Strip on Ticket -->
+<div class="bg-red-50 dark:bg-red-900/30 p-3 text-center border-t border-red-100 dark:border-red-900/50">
+<p class="text-primary text-sm font-medium flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">redeem</span>
+                        Offert avec amour par l'homme de tes rêves
+                    </p>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col sm:flex-row items-center gap-4 mt-12">
+<button class="group flex min-w-[200px] cursor-pointer items-center justify-center gap-3 overflow-hidden rounded-full h-14 px-8 bg-primary hover:bg-red-700 transition-all text-white text-base font-bold shadow-xl shadow-red-500/30 hover:shadow-red-500/50 transform hover:-translate-y-0.5">
+<span class="material-symbols-outlined">download</span>
+<span>Télécharger le billet</span>
+</button>
+<button class="group flex min-w-[200px] cursor-pointer items-center justify-center gap-3 overflow-hidden rounded-full h-14 px-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all text-[#181112] dark:text-white text-base font-bold shadow-sm hover:shadow-md">
+<span class="material-symbols-outlined">map</span>
+<span>Voir l'itinéraire</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="text-center py-8 text-gray-400 text-sm">
+<p>© 2026 Voyage Surprise. Tous droits réservés.</p>
+</footer>
+<script>
+// Date cible : 16 mars 2026 à 11:05:00 (heure locale)
+const targetDate = new Date('2026-03-16T11:05:00');
+function updateCountdown() {
+    const now = new Date();
+    let diff = targetDate - now;
+    if (diff < 0) diff = 0;
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+    document.getElementById('days').textContent = days;
+    document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+    document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+    document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+</script>
+</body></html>
